@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cuestionario</title>
+
+    <style>
+        /* Configuración general */
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            margin: 0;
+            background-color: #181818;
+            font-family: Arial, sans-serif;
+            color: white;
+        }
+
+        /* Centrar formulario */
+        main {
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 20px;
+        }
+
+        /* Formulario */
+        .formulario {
+            background-color: black;
+            width: 30%;
+            min-width: 300px;
+            height: 400px;
+            padding: 25px;
+            border: 2px solid red;
+
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+        }
+
+        /* Título */
+        h2 {
+            text-align: center;
+            text-transform: uppercase;
+            color: white;
+            font-size: 20px;
+            margin: 0 0 5px;
+        }
+
+        /* Campos */
+        .campo {
+            display: flex;
+            flex-direction: column;
+            gap: 8px;
+        }
+
+        /* Etiquetas */
+        label {
+            color: white;
+            font-size: 14px;
+            text-transform: uppercase;
+        }
+
+        /* Textos y comentarios */
+        input,
+        textarea {
+            width: 100%;
+            background-color: transparent;
+            color: white;
+            border: none;
+            border-bottom: 2px dashed gray;
+            padding: 8px 4px;
+            font-family: Arial, sans-serif;
+            font-size: 14px;
+            outline: none;
+            resize: vertical;
+        }
+
+        /* Texto de ayuda */
+        input::placeholder,
+        textarea::placeholder {
+            color: #999999;
+        }
+
+        /* Al seleccionar un campo */
+        input:focus,
+        textarea:focus {
+            border-bottom: 3px solid yellow;
+        }
+
+        /* Botón */
+        button {
+            margin-top: auto;
+            padding: 12px;
+            background-color: #1beae990;
+            color: white;
+            border: none;
+            font-size: 15px;
+            text-transform: uppercase;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+        /* Efecto hover */
+        button:hover {
+            background-color: #1aea90;
+        }
+
+        /* Adaptación a celulares */
+        @media (max-width: 768px) {
+            .formulario {
+                width: 90%;
+                min-width: 0;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <main>
+        <form class="formulario">
+            <h2>Cuestionario</h2>
+
+            <div class="campo">
+                <label for="nombre">Nombre completo</label>
+                <input
+                    type="text"
+                    id="nombre"
+                    name="nombre"
+                    placeholder="Escribe tu nombre"
+                    required
+                >
+            </div>
+
+            <div class="campo">
+                <label for="correo">Correo electrónico</label>
+                <input
+                    type="email"
+                    id="correo"
+                    name="correo"
+                    placeholder="ejemplo@correo.com"
+                    required
+                >
+            </div>
+
+            <div class="campo">
+                <label for="comentarios">Comentarios</label>
+                <textarea
+                    id="comentarios"
+                    name="comentarios"
+                    placeholder="Escribe tus comentarios..."
+                    rows="3"
+                    required
+                ></textarea>
+            </div>
+
+            <button type="submit">Enviar</button>
+        </form>
+    </main>
+
+</body>
+</html>
